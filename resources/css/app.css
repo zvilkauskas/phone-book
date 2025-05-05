@@ -1,3 +1,21 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+span.select2-selection {
+    border: 1px solid black !important;
+    height: 42px;
+    border-radius: 10px;
+}
+
+ul#select2-select2-multiple-container li {
+    margin-top: 7px !important;
+}
+
+.select2-search__field {
+    padding-left: 5px !important;
+}
+
+body {
+    background-color: red !important;
+}
