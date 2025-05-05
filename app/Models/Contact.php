@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
-class PhoneBook extends Model
+class Contact extends Model
 {
     protected $fillable = [
         'user_id',
@@ -27,6 +27,6 @@ class PhoneBook extends Model
 
     public function sharedWithUsers(): BelongsToMany
     {
-        return $this->belongsToMany(User::class, 'phone_book_user')->withTimestamps();
+        return $this->belongsToMany(User::class, 'contact_user');
     }
 }
