@@ -23,7 +23,7 @@ class ContactEdit extends Component
         $this->form->update();
         session()->flash('success', 'Contact updated successfully');
 
-        return redirect()->to('/phone-book');
+        return redirect()->to('/contacts');
     }
 
     public function render()

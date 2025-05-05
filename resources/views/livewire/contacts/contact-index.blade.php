@@ -9,7 +9,7 @@
         <!-- Add contact button -->
         <div class="flex items-center justify-between py-4">
             <h2>Contacts</h2>
-            <a href="{{ route('phone-book.create') }}" wire:navigate>
+            <a href="{{ route('contact.create') }}" wire:navigate>
                 <x-primary-button class="w-full text-center justify-center">
                     {{ __('Add Contact') }}
                 </x-primary-button>

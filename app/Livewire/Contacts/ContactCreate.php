@@ -17,7 +17,7 @@ class ContactCreate extends Component
         $this->form->store();
         session()->flash('success', 'Contact created successfully');
 
-        return redirect()->to('/phone-book');
+        return redirect()->to('/contacts');
     }
 
     public function render()

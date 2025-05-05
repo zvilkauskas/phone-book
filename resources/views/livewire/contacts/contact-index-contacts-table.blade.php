@@ -33,7 +33,7 @@
                     @endif
                 </td>
                 <td class="px-6 py-4">
-                    <a href="{{ route('phone-book.edit', $ownedContact->id) }}"
+                    <a href="{{ route('contact.edit', $ownedContact->id) }}"
                        class="font-medium text-blue-600 hover:underline"
                     >
                         Edit
