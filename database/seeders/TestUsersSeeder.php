@@ -14,8 +14,8 @@ class TestUsersSeeder extends Seeder
     {
         foreach (range(1,10) as $item) {
             User::create([
-                'name' => "Testas $item",
-                'email' => "testas{$item}@testas{$item}.lt",
+                'name' => "User $item",
+                'email' => "user{$item}@user{$item}.lt",
                 'password' => bcrypt('password'),
             ]);
         }

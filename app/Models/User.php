@@ -48,13 +48,13 @@ class User extends Authenticatable
         ];
     }
 
-    public function phoneBooks(): HasMany
+    public function contacts(): HasMany
     {
-        return $this->hasMany(PhoneBook::class);
+        return $this->hasMany(Contact::class);
     }
 
-    public function sharedPhoneBooks(): BelongsToMany
+    public function sharedContacts(): BelongsToMany
     {
-        return $this->belongsToMany(PhoneBook::class, 'phone_book_user');
+        return $this->belongsToMany(Contact::class, 'phone_book_user');
     }
 }
