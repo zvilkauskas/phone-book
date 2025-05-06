@@ -7,7 +7,7 @@ use Livewire\Form;
 
 class ContactForm extends Form
 {
-    public ?Contact $Contact;
+    public ?Contact $contact;
 
     public $name = '';
 
@@ -19,7 +19,7 @@ class ContactForm extends Form
 
     public function setContact(Contact $contact): void
     {
-        $this->Contact = $contact;
+        $this->contact = $contact;
         $this->name = $contact->name;
         $this->phone = $contact->phone;
         $this->country_id = $contact->country_id ?? '';

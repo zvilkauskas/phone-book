@@ -38,7 +38,7 @@
                     >
                         Edit
                     </a>
-                    <button wire:click="deletePhoneBook({{ $ownedContact->id }})"
+                    <button wire:click="deleteContact({{ $ownedContact->id }})"
                             wire:confirm="Are you sure you want to delete this contact?"
                             class="font-medium text-red-600 hover:underline"
                     >
