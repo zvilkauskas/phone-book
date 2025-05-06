@@ -14,14 +14,12 @@ class CreateContactTest extends TestCase
 {
     use RefreshDatabase;
 
-
     public function test_user_can_create_contact(): void
     {
         $user = User::factory()->create();
         $this->actingAs($user);
 
-        $this->seed(CountrySeeder::class);
-        $country = Country::first();
+        $country = Country::factory()->create();
 
         Livewire::test(ContactCreate::class)
             ->set('form.name', 'John Doe')
@@ -35,6 +33,5 @@ class CreateContactTest extends TestCase
             'user_id' => $user->id,
             'country_id' => $country->id,
         ]);
-
     }
 }
