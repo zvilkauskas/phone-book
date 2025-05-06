@@ -24,13 +24,14 @@ class ContactSeeder extends Seeder
                 $contact = Contact::create([
                     'user_id' => $user->id,
                     'country_id' => $countries->random(),
-                    'name' => 'Contact ' . fake()->name(),
+                    'name' => fake()->name(),
                     'phone' => rand(1000000, 9999999),
                 ]);
 
-
-                $sharedUsers = $users->where('id', '!=', $user->id)->random(rand(1, 3))->pluck('id');
-                $contact->sharedWithUsers()->attach($sharedUsers);
+                if (rand(0, 1)) {
+                    $sharedUsers = $users->where('id', '!=', $user->id)->random(rand(1, 3))->pluck('id');
+                    $contact->sharedWithUsers()->attach($sharedUsers);
+                }
             }
         }
     }
