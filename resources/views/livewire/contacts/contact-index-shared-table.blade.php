@@ -1,6 +1,15 @@
 <div class="py-12">
     <div class="flex items-center justify-between py-4">
-        <h2>Shared contacts</h2>
+        <h2>Contacts shared with me</h2>
+    </div>
+    <div class="py-2">
+
+        <!-- Search -->
+        <x-text-input placeholder="Search for name or phone"
+                      wire:model="searchSharedContacts"
+                      wire:input="$refresh"
+                      type="text"
+        />
     </div>
     <div class="relative overflow-x-auto shadow-md sm:rounded-lg max-w-xl">
         <table class="w-full text-sm text-left rtl:text-right text-gray-700">

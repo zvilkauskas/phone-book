@@ -1,14 +1,9 @@
 <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
     <div class="py-2">
-        <!-- Search -->
-        <x-text-input placeholder="Search for name or phone"
-                      wire:model="search"
-                      wire:input="$refresh"
-                      type="text"
-        />
+
         <!-- Add contact button -->
         <div class="flex items-center justify-between py-4">
-            <h2>Contacts</h2>
+            <h2>My contacts</h2>
             <a href="{{ route('contact.create') }}" wire:navigate>
                 <x-primary-button class="w-full text-center justify-center">
                     {{ __('Add Contact') }}
@@ -27,7 +22,7 @@
         @if($sharedContacts->count())
             @include('livewire.contacts.contact-index-shared-table')
         @else
-            <h2>No shared contacts.</h2>
+            <h2>You have no shared contacts.</h2>
         @endif
     </div>
 
