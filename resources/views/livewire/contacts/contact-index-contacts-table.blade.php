@@ -1,3 +1,12 @@
+<div class="py-2">
+
+    <!-- Search -->
+    <x-text-input placeholder="Search for name or phone"
+                  wire:model="searchOwnedContacts"
+                  wire:input="$refresh"
+                  type="text"
+    />
+</div>
 <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
     <table class="w-full text-sm text-left rtl:text-right text-gray-700">
         <thead class="text-xs text-gray-700 uppercase bg-gray-50">

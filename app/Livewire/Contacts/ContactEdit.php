@@ -8,6 +8,7 @@ use App\Models\Contact;
 use App\Models\User;
 use Illuminate\Http\RedirectResponse;
 use Livewire\Component;
+use Livewire\Features\SupportRedirects\Redirector;
 
 class ContactEdit extends Component
 {
@@ -18,7 +19,7 @@ class ContactEdit extends Component
         $this->form->setContact($contact);
     }
 
-    public function updateContact(): RedirectResponse
+    public function updateContact(): RedirectResponse|Redirector
     {
         $this->form->update();
         session()->flash('success', 'Contact updated successfully');

@@ -11,7 +11,8 @@ class ContactIndex extends Component
 {
     use WithPagination;
 
-    public $search = '';
+    public $searchOwnedContacts = '';
+    public $searchSharedContacts = '';
 
     public function deleteContact($id): void
     {
@@ -28,11 +29,13 @@ class ContactIndex extends Component
     public function render()
     {
         $ownedContacts = Contact::where('user_id', auth()->id())
-            ->search(['name', 'phone'], $this->search)
+            ->search(['name', 'phone'], $this->searchOwnedContacts)
             ->latest()
             ->paginate(10, ['*'], 'owned-contacts-table');
 
-        $sharedContacts = auth()->user()->sharedContacts()->latest()
+        $sharedContacts = auth()->user()->sharedContacts()
+            ->search(['name', 'phone'], $this->searchSharedContacts)
+            ->latest()
             ->paginate(5, ['*'], 'shared-contacts-table');
 
         return view('livewire.contacts.contact-index', [
