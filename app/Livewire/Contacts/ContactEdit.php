@@ -13,9 +13,9 @@ class ContactEdit extends Component
 {
     public ContactForm $form;
 
-    public function mount(Contact $Contact): void
+    public function mount(Contact $contact): void
     {
-        $this->form->setContact($Contact);
+        $this->form->setContact($contact);
     }
 
     public function updateContact(): RedirectResponse
