@@ -33,5 +33,10 @@
             @endforeach
             </tbody>
         </table>
+
+        <!-- Pagination -->
+        <div class="px-6 py-3">
+            {{ $sharedContacts->links() }}
+        </div>
     </div>
 </div>
