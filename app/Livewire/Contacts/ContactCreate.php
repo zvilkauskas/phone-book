@@ -1,10 +1,13 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Livewire\Contacts;
 
 use App\Livewire\Forms\Contacts\ContactForm;
 use App\Models\Country;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\View\View;
 use Livewire\Component;
 use Livewire\Features\SupportRedirects\Redirector;
 
@@ -20,7 +23,7 @@ class ContactCreate extends Component
         return redirect()->to('/contacts');
     }
 
-    public function render()
+    public function render(): View
     {
         return view('livewire.contacts.contact-create', [
             'countries' => Country::all(),

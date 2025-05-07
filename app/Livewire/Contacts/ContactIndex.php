@@ -1,9 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Livewire\Contacts;
 
 use App\Models\Contact;
 use App\Models\User;
+use Illuminate\View\View;
 use Livewire\Component;
 use Livewire\WithPagination;
 
@@ -26,7 +29,7 @@ class ContactIndex extends Component
         session()->forget('success');
     }
 
-    public function render()
+    public function render(): View
     {
         $ownedContacts = Contact::where('user_id', auth()->id())
             ->search(['name', 'phone'], $this->searchOwnedContacts)

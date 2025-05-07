@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Livewire\Contacts;
 
 use App\Livewire\Forms\Contacts\ContactForm;
@@ -7,6 +9,7 @@ use App\Models\Country;
 use App\Models\Contact;
 use App\Models\User;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\View\View;
 use Livewire\Component;
 use Livewire\Features\SupportRedirects\Redirector;
 
@@ -27,7 +30,7 @@ class ContactEdit extends Component
         return redirect()->to('/contacts');
     }
 
-    public function render()
+    public function render(): View
     {
         return view('livewire.contacts.contact-edit', [
             'users' => User::where('id', '!=', auth()->id())->get(),

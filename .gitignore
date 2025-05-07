@@ -6,11 +6,17 @@
 /storage/*.key
 /storage/pail
 /vendor
+
+# Environment specific
 .env
 .env.backup
 .env.production
 .phpactor.json
+
+# PHPUnit
 .phpunit.result.cache
+.phpunit.cache
+
 Homestead.json
 Homestead.yaml
 npm-debug.log
@@ -21,3 +27,10 @@ yarn-error.log
 /.nova
 /.vscode
 /.zed
+
+#PHPStan
+.phpstan.result.cache
+
+# Docker
+/docker/php/local.ini
+*.Zone.Identifier
