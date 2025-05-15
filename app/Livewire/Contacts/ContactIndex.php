@@ -19,8 +19,8 @@ class ContactIndex extends Component
 
     public function deleteContact($id): void
     {
-        $Contact = Contact::findOrFail($id);
-        $Contact->delete();
+        $contact = Contact::findOrFail($id);
+        $contact->delete();
         session()->flash('success', 'Contact deleted successfully');
     }
 
